@@ -7,7 +7,7 @@ var api = new telegram({
 });
 async function sendMessage(body){
     await api.sendPhoto({
-        chat_id:-1002028737966,
+        chat_id:-1001456455807,
         caption: `${body.name}\n\https://learn.dwmaroc.com/courses/${body.slug}`,
          photo: body.image
     })
