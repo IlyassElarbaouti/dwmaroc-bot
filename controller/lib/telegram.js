@@ -7,11 +7,11 @@ var api = new telegram({
 });
 async function sendMessage(body){
     console.log(body)
-  //  await api.sendPhoto({
-       // chat_id:-1001456455807,
-      //  caption: `•name: ${body.name}\n\•language: ${body.language}\n\•Course contidtion: ${body.courseCondition}\n\•category: ${body.category}\n\•link: https://learn.dwmaroc.com/courses/${body.slug}`,
-      //   photo: body.image
-//    })
+    await api.sendPhoto({
+        chat_id:-1001456455807,
+        caption: `•name: ${body.name}\n\•language: ${body.language}\n\•Course contidtion: ${body.courseCondition}\n\•category: ${body.category}\n\•link: https://learn.dwmaroc.com/courses/${body.slug}`,
+         photo: body.image
+    })
     return "success"
 }
 
