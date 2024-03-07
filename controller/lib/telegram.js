@@ -21,12 +21,12 @@ async function sendMessage(body = {}) {
 
     // Build the caption dynamically based on the existence of each field
     const caption = [
-        name && `•name: ${name}`,
-        language && `•language: ${language}`,
-        courseCondition && `•Course condition: ${courseCondition}`,
-        category && `•category: ${category}`,
-        slug && `•link: https://learn.dwmaroc.com/courses/${slug}`,
-        "Share our channel to support us:\n@dwmfreecourses",
+        name && `**• Name:** ${name}`,
+        language && `**• Language:** ${language}`,
+        courseCondition && `**• Course Condition:** ${courseCondition}`,
+        category && `**• Category:** ${category}`,
+        slug && `**• Link:** https://learn.dwmaroc.com/courses/${slug}`,
+        "**Share our channel to support us:**\n@dwmfreecourses",
     ].filter(Boolean).join('\n');
 
     await api.sendPhoto({
