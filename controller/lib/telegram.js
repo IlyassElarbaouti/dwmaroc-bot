@@ -21,12 +21,12 @@ async function sendMessage(body = {}) {
 
     // Build the caption dynamically based on the existence of each field
     const caption = [
-        name && `**• Name:** ${name}`,
-        language && `**• Language:** ${language}`,
-        courseCondition && `**• Course Condition:** ${courseCondition}`,
-        category && `**• Category:** ${category}`,
-        slug && `**• Link:** https://learn.dwmaroc.com/courses/${slug}`,
-        "**Share our channel to support us:**\n@dwmfreecourses",
+        name && `<b>• Name:</b> ${name}`,
+        language && `<b>• Language:</b> ${language}`,
+        courseCondition && `<b>• Course Condition:</b> ${courseCondition}`,
+        category && `<b>• Category:</b> ${category}`,
+        slug && `<b>• Link:</b> <a href="https://learn.dwmaroc.com/courses/${slug}">${slug}</a>`,
+        "<b>Share our channel to support us:</b>\n@dwmfreecourses",
     ].filter(Boolean).join('\n');
 
     await api.sendPhoto({
@@ -34,6 +34,7 @@ async function sendMessage(body = {}) {
         chat_id: -1002028737966,
         caption,
         photo: image,
+        parse_mode: 'HTML', // Enable HTML formatting
     });
 
     return "success";
