@@ -7,10 +7,20 @@ const app = express();
 
 app.use(express.json())
 app.post("*", async(req,res)=>{
-    res.send(await handler(req))
+    console.log(req.body)
+    try{
+
+        console.log("first")
+        await handler(req)
+        res.send(200)
+    }
+    catch(e){
+        console.log(e)
+    }
 });
 
 app.get("*", async(req,res)=>{
+    console.log("get")
     res.send("Hello get")
 });
 
@@ -18,4 +28,3 @@ app.listen(PORT,function(err){
     if(err)console.log(err);
     console.log("Server listening on PORT", PORT)
 })
-
