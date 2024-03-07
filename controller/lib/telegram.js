@@ -7,7 +7,7 @@ var api = new telegram({
 });
 
 async function sendMessage(body = {}) {
-    console.log(body);
+
 
     // Provide default values for optional fields
     const {
@@ -25,12 +25,13 @@ async function sendMessage(body = {}) {
         language && `<b>Language:</b> ${language}`,
         courseCondition && `<b>Course Condition:</b> ${courseCondition}`,
         category && `<b>Category:</b> ${category}`,
-        slug && `<b>Link:</b> <a href="https://learn.dwmaroc.com/courses/${slug}">${slug}</a>`,
+        slug && `<b>Link:</b> <a href="https://learn.dwmaroc.com/courses/${slug.current}">Click here</a>`,
         "<b>Share our channel to support us:</b>\n@dwmfreecourses",
     ].filter(Boolean).join('\n \n');
 
     await api.sendPhoto({
         chat_id: -1001456455807,
+        // chat_id: -1002028737966,
         caption,
         photo: image,
         parse_mode: 'HTML', // Enable HTML formatting
