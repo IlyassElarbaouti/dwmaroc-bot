@@ -27,7 +27,7 @@ async function sendMessage(body = {}) {
         category && `<b>• Category:</b> ${category}`,
         slug && `<b>• Link:</b> <a href="https://learn.dwmaroc.com/courses/${slug}">${slug}</a>`,
         "<b>Share our channel to support us:</b>\n@dwmfreecourses",
-    ].filter(Boolean).join('\n');
+    ].filter(Boolean).join('\n \n');
 
     await api.sendPhoto({
         //chat_id: -1001456455807,
