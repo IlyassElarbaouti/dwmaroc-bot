@@ -31,7 +31,6 @@ async function sendMessage(body = {}) {
 
     await api.sendPhoto({
         chat_id: -1001456455807,
-        //chat_id: -1002028737966,
         caption,
         photo: image,
         parse_mode: 'HTML', // Enable HTML formatting
